@@ -4,25 +4,24 @@ import { createContext, useState, useEffect } from 'react'
 export const ShoppingCartContext = createContext()
 
 export const initializeLocalStorage = () => {
-  const accountInitializeLocalStorage = localStorage.getItem("account")
-  const signOutinitializeLocalStorare = localStorage.getItem("signOut")
-  let parsedAccount
-  let parsedsignOut
+  const accountInitializeLocalStorage = localStorage.getItem("account");
+  const signOutInitializeLocalStorage = localStorage.getItem("sign-out"); 
+  let parsedAccount;
+  let parsedSignOut;  
 
-  if (!accountInitializeLocalStorage){
-    localStorage.setItem("account", JSON.stringify({}))
-    parsedAccount = {}
+  if (!accountInitializeLocalStorage) {
+    localStorage.setItem("account", JSON.stringify({}));
+    parsedAccount = {};
   } else {
-    parsedAccount = JSON.parse(accountInitializeLocalStorage)
+    parsedAccount = JSON.parse(accountInitializeLocalStorage);
   }
-  if (!signOutinitializeLocalStorare){
-    localStorage.setItem("account", JSON.stringify(false))
-    parsedsignOut = {}
-  } else {
-    parsedSignOut = JSON.parse(signOutinitializeLocalStorare)
-  }
-}
 
+  if (!signOutInitializeLocalStorage) {
+    localStorage.setItem("sign-out", JSON.stringify(false));  
+  } else {
+    parsedSignOut = JSON.parse(signOutInitializeLocalStorage);
+  }
+};
 export const ShoppingCartProvider = ({children}) => {
 
   const [account, setAccount] = useState({});

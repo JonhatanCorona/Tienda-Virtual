@@ -50,7 +50,7 @@ const AppRoutes = () => {
 }
 
 const App = () => {
-  initializeLocalStorage()
+  initializeLocalStorage();
   return (
     <ShoppingCartProvider>
       <BrowserRouter>
@@ -59,7 +59,7 @@ const App = () => {
         <CheckoutSideMenu />
       </BrowserRouter>
     </ShoppingCartProvider>
-  )
-}
+  );
+};
 
 export default App
